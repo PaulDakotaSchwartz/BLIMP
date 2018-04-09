@@ -7,6 +7,7 @@ import LoginButton from './LoginButton';
 import LoginMenu from './LoginMenu';
 
 import { update } from '../services/withUser';
+import "../styles/style.css";
 
 const Navbar = (props) => {
   const { user } = props;
@@ -26,8 +27,15 @@ const Navbar = (props) => {
       });
   }
   return (
-    <AppBar
+    <AppBar 
       title="BLIMP - Budget Line Item Management Program"
+      
+      style={{
+      margin: '0 auto',
+      border: '2px solid rgb(1,1,62)',
+      backgroundColor: 'rgb(1,1,62)',
+      }}
+
       showMenuIconButton={true}
 
       // Icon and drop down for current logged in user and logout option.

@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { List, ListItem } from 'material-ui/List';
 import { withUser } from '../services/withUser';
 import Budget from '../components/Budget';
+
 class BudgetPage extends Component {
   state = {
     stuff: null
@@ -46,7 +47,7 @@ class BudgetPage extends Component {
           <div>Hold on, looking for your stuff...</div>
         }
         {!user &&
-          <div>Hey! I don't recognize you! Register and log in using the link above</div>
+          <div>Hey! I don't recognize you! Register or log in using the link above</div>
         }
       </Fragment>
     );
