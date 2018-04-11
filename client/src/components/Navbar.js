@@ -5,6 +5,7 @@ import AppBar from 'material-ui/AppBar';
 
 import LoginButton from './LoginButton';
 import LoginMenu from './LoginMenu';
+import BudgetMenu from './BudgetMenu';
 
 import { update } from '../services/withUser';
 import "../styles/style.css";
@@ -26,17 +27,27 @@ const Navbar = (props) => {
         console.log(err);
       });
   }
+  const handleTableNav = () => {
+    props.history.push('/budget');
+  }
+  const handleHomeNav = () => {
+    props.history.push('/');
+  }
   return (
     <AppBar 
       title="BLIMP - Budget Line Item Management Program"
       
       style={{
-      margin: '0 auto',
-      border: '2px solid rgb(1,1,62)',
-      backgroundColor: 'rgb(1,1,62)',
+        margin: '0 auto',
+        border: '2px solid rgb(1,1,62)',
+        backgroundColor: 'rgb(1,1,62)',
       }}
 
       showMenuIconButton={true}
+
+      iconElementLeft={user ?
+        <BudgetMenu username={username} tableNav={handleTableNav} homeNav={handleHomeNav}/>
+        : <LoginButton onClick={handleLogIn} />}
 
       // Icon and drop down for current logged in user and logout option.
       iconElementRight={user ?

@@ -14,6 +14,10 @@ p { text-align: center;
     margin: 0 0 10px;
 }
 
+button svg {
+    color: white !important;
+}
+
 #full-size {
     height: 100%;
     width: 100%;
