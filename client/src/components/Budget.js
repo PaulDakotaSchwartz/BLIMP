@@ -24,10 +24,15 @@ const Budget = (props) => {
                                 <input className="form-control input-lg" type="text" id="utilities" placeholder="Utilities" />
                                 <input className="form-control input-lg" type="text" id="insurance" placeholder="Insurance" />
                             </form>
-                            <button type="button" id="submit" className="btn btn-outline-secondary btn-lg">Submit</button>        
-                        </div>
-                    </div>
+                            <button type="button" id="submit" className="btn btn-outline-secondary btn-lg">Submit</button>
+                                <button data-balloon="Whats up!" data-balloon-pos="up">Hover me!</button>
 
+                        </div>
+                        
+                    </div>
+                
+                            
+                        
                     <div className="col-sm-4">
                         <div className="results">
                             <h1 className="title">Results</h1>
