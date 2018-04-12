@@ -27,12 +27,19 @@ const Navbar = (props) => {
         console.log(err);
       });
   }
+
   const handleTableNav = () => {
     props.history.push('/budget');
   }
+
   const handleHomeNav = () => {
     props.history.push('/');
   }
+
+  const handleNotFoundNav = () => {
+    props.history.push('/notfoundpage');
+  }
+
   return (
     <AppBar 
       title="BLIMP - Budget Line Item Management Program"
@@ -46,7 +53,7 @@ const Navbar = (props) => {
       showMenuIconButton={true}
 
       iconElementLeft={user ?
-        <BudgetMenu username={username} tableNav={handleTableNav} homeNav={handleHomeNav}/>
+        <BudgetMenu username={username} tableNav={handleTableNav} homeNav={handleHomeNav} notFoundNav={handleNotFoundNav}/>
         : <LoginButton onClick={handleLogIn} />}
 
       // Icon and drop down for current logged in user and logout option.

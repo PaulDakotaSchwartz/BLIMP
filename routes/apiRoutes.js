@@ -76,22 +76,44 @@ router.route('/stuff')
   .get(mustBeLoggedIn(), (req, res) => {
     // at this point we can assume the user is logged in. if not, the mustBeLoggedIn middleware would have caught it
     res.json([
-      'Brains',
-      'Liver',
-      'The Walking Dead'
+      'Select an option from the menu above to begin.'
     ]);
   });
 
-router.route('/budget')
+router.route('/notfoundpage')
   .get(mustBeLoggedIn(), (req, res) => {
     // at this point we can assume the user is logged in. if not, the mustBeLoggedIn middleware would have caught it
-    res.json([
-      ' '
-      // 'Eyeballs',
-      // 'Pancreas',
-      // 'Fear The Walking Dead'
-    ]);
+    res.status(404).json(err);
   });
+
+
+router.route('/budget/:id')
+  .get(mustBeLoggedIn(), (req, res) => {
+    db.User
+      .findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  });
+
+router.route('/budget')
+  .post((req, res) => {
+    console.log('req.body', req.body);
+    db.User
+      .findOneAndUpdate({ _id: req.body.id }, req.body.budgetItems)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  });
+
+// router.route('/budget')
+//   .get(mustBeLoggedIn(), (req, res) => {
+//     // at this point we can assume the user is logged in. if not, the mustBeLoggedIn middleware would have caught it
+//     res.json([
+//       ' '
+//       // 'Eyeballs',
+//       // 'Pancreas',
+//       // 'Fear The Walking Dead'
+//     ]);
+//   });
 
 module.exports = router;
 
