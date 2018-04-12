@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Background from '../images/blimp1.png';
-import { SSL_OP_PKCS1_CHECK_1 } from 'constants';
+// import { SSL_OP_PKCS1_CHECK_1 } from 'constants';
+
 var sectionStyle = {
   width: "100%",
   height: "1300px",

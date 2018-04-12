@@ -12,6 +12,9 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import DashboardPage from './pages/DashboardPage';
+import ScraperHome from './pages/ScraperHome';
+import Saved from './pages/Saved';
+
 
 class App extends Component {
   componentDidMount() {
@@ -46,6 +49,8 @@ class App extends Component {
               <Route exact path="/create" component={CreateAccountPage} />
               <Route exact path="/budget" component={DashboardPage} />
               <Route exact path="/notfoundpage" component={NotFoundPage} />
+              <Route exact path="/scraper" component={ScraperHome} />
+              <Route exact path="/scraper/saved" component={Saved} />
               <Route component={NotFoundPage} />
             </Switch>
           </Fragment>

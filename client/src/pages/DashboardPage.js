@@ -68,7 +68,7 @@ class DashboardPage extends Component {
                   <input className="form-control input-lg" type="text" id="food" placeholder="Food" onChange={this.handleInputChange} name="food" />
                   <input className="form-control input-lg" type="text" id="utilities" placeholder="Utilities" onChange={this.handleInputChange} name="utilities" />
                   <input className="form-control input-lg" type="text" id="insurance" placeholder="Insurance" onChange={this.handleInputChange} name="insurance" />
-                  <button type="submit" id="submit" className="btn btn-outline-secondary btn-lg">Submit</button>
+                  <button data-balloon="Update your data." data-balloon-pos="up"type="submit" id="submit" className="btn btn-outline-secondary btn-lg">Submit</button>
                 </form>
               </div>
             </div>

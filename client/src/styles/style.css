@@ -18,6 +18,10 @@ button svg {
     color: white !important;
 }
 
+.flatbutton {
+    color: white !important;
+}
+
 #full-size {
     height: 100%;
     width: 100%;

@@ -5,7 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import MoreHeadIcon from 'material-ui/svg-icons/navigation/menu';
 
 const BudgetMenu = (props) => {
-  const { onLogOut, tableNav, homeNav, notFoundNav, username, ...otherProps } = props;
+  const { onLogOut, tableNav, homeNav, notFoundNav, searchNav, savedNav, username, ...otherProps } = props;
   return (
     <IconMenu
       {...otherProps}
@@ -17,6 +17,8 @@ const BudgetMenu = (props) => {
     >
       <MenuItem primaryText="Homepage" onClick={homeNav}/>
       <MenuItem primaryText="Tablepage" onClick={tableNav}/>
+      <MenuItem primaryText="Searchpage" onClick={searchNav}/>
+      <MenuItem primaryText="Savedpage" onClick={savedNav}/>
       <MenuItem primaryText="NotFoundpage" onClick={notFoundNav}/>
     </IconMenu>
   )

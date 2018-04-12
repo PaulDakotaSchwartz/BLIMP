@@ -3,6 +3,8 @@ const passport = require('passport');
 const router = express.Router();
 const db = require('../models');
 const mustBeLoggedIn = require('../middleware/mustBeLoggedIn');
+const articleController = require("../controllers/articleController");
+const ibtController = require("../controllers/ibtController");
 
 function getCurrentUser(req, res) {
   // I'm picking only the specific fields its OK for the audience to see publicly
@@ -114,6 +116,23 @@ router.route('/budget')
 //       // 'Fear The Walking Dead'
 //     ]);
 //   });
+
+// Matches with "/api/articles"
+router.route("/scraper")
+  .get(articleController.findAll)
+  .post(articleController.create);
+
+// Matches with "/api/articles/:id"
+router
+  .route("/scraper/:id")
+  .get(articleController.findById)
+  .put(articleController.update)
+  .delete(articleController.remove);
+
+// Matches with "/api/nyt"
+router
+  .route("/ibt")
+  .get(ibtController.findAll);
 
 module.exports = router;
 
